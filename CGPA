@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class Student{
+    Scanner sc=new Scanner(System.in);
+    String name, usn;
+    int[] credits=new int[10];
+    int[] marks=new int[10];
+    int n,total=0;
+    double cgpa=0.0;
+    void indis(){
+        System.out.println("Enter Name and USN: ");
+        name=sc.nextLine();
+        usn=sc.nextLine();
+        System.out.println("No. of subjects: ");
+        n=sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("Credits: ");
+            credits[i]=sc.nextInt();
+            System.out.print("Marks: ");
+            marks[i]=sc.nextInt();
+        }}
+    void cgpa(){
+        for(int i=0;i<n;i++)
+        {
+            int grade=(marks[i]+10)/10;
+            cgpa=cgpa+(credits[i]*grade);
+            total=total+credits[i];
+        }
+        System.out.println("CGPA is "+(cgpa/total));}
+    }
+public class CGPA{
+    public static void main(String args[]){
+        Student s1=new Student();
+        s1.indis();
+        s1.cgpa();}
+}
